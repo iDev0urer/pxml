@@ -18,11 +18,14 @@
 const xml = require('xml'),
 	  _ = require('lodash'),
 	  fs = require('fs'),
-	  path = require('path');
+	  path = require('path'),
+      pkg = require('./package.json');
+
+export const version = pkg.version;
 
 // Nonexhaustive map of lowercase directory names to CamelCase
 // standard object names
-let NameMap = {
+export let NameMap = {
 	'classes': 'ApexClass',
 	'labels': 'CustomLabels',
 	'pages': 'ApexPage',
@@ -30,7 +33,7 @@ let NameMap = {
 	'triggers': 'ApexTrigger'
 };
 
-class PackageXML {
+export default class PackageXML {
 
 	// Constructor function
 	// @param data<object> JSON object representing a package.xml file
@@ -204,5 +207,3 @@ class PackageXML {
 	    return info;
 	}
 }
-
-module.exports = PackageXML;
