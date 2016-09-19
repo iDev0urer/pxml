@@ -118,7 +118,7 @@ class PackageXML {
 	// 
 	// @param name The path/name of the file
 	save(name) {
-		return fs.writeFileSync(this.to_string(), name);
+		return fs.writeFileSync(name, this.to_string());
 	}
 
 	// Generates an instance of the PackageXML class using a directory.
